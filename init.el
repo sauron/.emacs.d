@@ -1,5 +1,5 @@
 ;; Files and directories
-
+(setq magit-git-executable "/usr/local/git/bin/git")
 (setq pgb-emacs-init-file load-file-name)
 (setq pgb-emacs-config-dir
       (file-name-directory pgb-emacs-init-file))
