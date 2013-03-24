@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
- '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/"))))
+ '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("marmalade" . "http://marmalade-repo.org/packages/") ("tromey" . "http://tromey.com/elpa/"))))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
