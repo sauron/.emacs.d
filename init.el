@@ -9,6 +9,14 @@
 (setq pgb-elisp-dir (expand-file-name "elisp" pgb-emacs-config-dir))
 (setq pgb-elisp-external-dir
       (expand-file-name "external" pgb-elisp-dir))
+(setq pgb-init-dir
+      (expand-file-name "init.d" pgb-emacs-config-dir))
+
+;; Load all elisp files in ./init.d
+(if (file-exists-p pgb-init-dir)
+    (dolist (file (directory-files pgb-init-dir t "\\.el$"))
+      (load file)))
+
 (setq pgb-secrets-file (expand-file-name "secrets.el" pgb-emacs-config-dir))
 
 ;; Set up 'custom' system
@@ -21,7 +29,6 @@
     (add-to-list 'load-path project)))
 
 (require 'yagist)
-
 (setq gist-authenticate-function 'gist-basic-authentication)
 
 (when (file-exists-p pgb-secrets-file)
