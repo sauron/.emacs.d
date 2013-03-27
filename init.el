@@ -1,5 +1,6 @@
-;; Files and directories
+;; Find git executable
 (setq magit-git-executable "/usr/local/git/bin/git")
+;; Files and directories
 (setq pgb-emacs-init-file load-file-name)
 (setq pgb-emacs-config-dir
       (file-name-directory pgb-emacs-init-file))
@@ -22,11 +23,6 @@
 ;; Set up 'custom' system
 (setq custom-file (expand-file-name "emacs-customizations.el" pgb-emacs-config-dir))
 (load custom-file)
-
-; Add external projects to load path
-(dolist (project (directory-files pgb-elisp-external-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
 
 (require 'yagist)
 (setq gist-authenticate-function 'gist-basic-authentication)
