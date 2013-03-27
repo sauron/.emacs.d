@@ -20,10 +20,3 @@
 ;; Set up 'custom' system
 (setq custom-file (expand-file-name "emacs-customizations.el" pgb-emacs-config-dir))
 (load custom-file)
-
-;; Line numbers
-(add-hook 'pgb-code-modes-hook
-    (lambda () (linum-mode 1)))
-
-(add-hook 'ruby-mode-hook
-    (lambda () (run-hooks 'pgb-code-modes-hook)))
