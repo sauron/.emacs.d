@@ -1,12 +1,11 @@
 ;; Find git executable
 (setq magit-git-executable "/usr/local/git/bin/git")
+
 ;; Files and directories
 (setq pgb-emacs-init-file load-file-name)
 (setq pgb-emacs-config-dir
       (file-name-directory pgb-emacs-init-file))
-(setq user-emacs-directory pgb-emacs-config-dir)
-(setq backup-directory-alist
-      (list (cons "." (expand-file-name "backup" user-emacs-directory)))) 
+(setq user-emacs-directory pgb-emacs-config-dir) 
 (setq pgb-elisp-dir (expand-file-name "elisp" pgb-emacs-config-dir))
 (setq pgb-elisp-external-dir
       (expand-file-name "external" pgb-elisp-dir))
@@ -15,7 +14,7 @@
 
 ;; Load all elisp files in ./init.d
 (if (file-exists-p pgb-init-dir)
-    (dolist (file (directory-files pgb-init-dir t "\.el$"))
+    (dolist (file (directory-files pgb-init-dir t "\\.el$"))
       (load file)))
 
 ;; Set up 'custom' system
@@ -28,4 +27,3 @@
 
 (add-hook 'ruby-mode-hook
     (lambda () (run-hooks 'pgb-code-modes-hook)))
-
