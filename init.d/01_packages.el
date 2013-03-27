@@ -1,4 +1,8 @@
 (require 'package)
+
+(setq pgb-required-packages 
+      (list 'xml-rpc 'magit 'gh 'inf-ruby))
+
 (add-to-list 'package-archives 
             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
