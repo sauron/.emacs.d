@@ -15,20 +15,12 @@
 
 ;; Load all elisp files in ./init.d
 (if (file-exists-p pgb-init-dir)
-    (dolist (file (directory-files pgb-init-dir t "\\.el$"))
+    (dolist (file (directory-files pgb-init-dir t "\.el$"))
       (load file)))
-
-(setq pgb-secrets-file (expand-file-name "secrets.el" pgb-emacs-config-dir))
 
 ;; Set up 'custom' system
 (setq custom-file (expand-file-name "emacs-customizations.el" pgb-emacs-config-dir))
 (load custom-file)
-
-(require 'yagist)
-(setq gist-authenticate-function 'gist-basic-authentication)
-
-(when (file-exists-p pgb-secrets-file)
-  (load pgb-secrets-file))
 
 ;; Line numbers
 (add-hook 'pgb-code-modes-hook
@@ -36,3 +28,4 @@
 
 (add-hook 'ruby-mode-hook
     (lambda () (run-hooks 'pgb-code-modes-hook)))
+
