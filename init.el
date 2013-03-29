@@ -1,3 +1,4 @@
+(run-with-idle-timer 0.1 nil 'toggle-fullscreen)
 ;; Find git executable
 (setq magit-git-executable "/usr/local/git/bin/git")
 

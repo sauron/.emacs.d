@@ -13,3 +13,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(add-to-list 'default-frame-alist '(height . 42))
+(add-to-list 'default-frame-alist '(width . 160))
