@@ -1,21 +1,19 @@
 ;; Line numbers
-(add-hook 'pgb-code-modes-hook
-    (lambda () (linum-mode 1)))
-
-(add-hook 'ruby-mode-hook
-    (lambda () (run-hooks 'pgb-code-modes-hook)))
-
-(add-hook 'ruby-mode-hook
-    (lambda () (rvm-activate-corresponding-ruby)))
+(global-linum-mode 1)
+(setq linum-format "%4d\u2502 ")
 
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
+
 (delete-selection-mode t)
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+
 (blink-cursor-mode t)
+
 (show-paren-mode t)
 (column-number-mode t)
 (set-fringe-style -1)
